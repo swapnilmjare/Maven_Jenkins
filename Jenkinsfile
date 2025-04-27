@@ -7,4 +7,15 @@ pipeline{
       }
     }
   }
+  post{
+    success{
+      sh 'tar -cvzf git.tar /var/lib/jenkins/workspace/github_pipeline'
+    }
+    failure{
+      sh 'date'
+    }
+    always{
+      sh 'ifconfig'
+    }
+  }
 }
